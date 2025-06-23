@@ -4,11 +4,11 @@ import os
 
 app = Flask(__name__)
 
-TENANT_ID = os.getenv("97731762-4437-411a-9438-1def5eb9188a")
-CLIENT_ID = os.getenv("957043b2-d8d0-4038-b8a0-1df194e591c5")
-CLIENT_SECRET = os.getenv("BSU8Q~P4g8Vxb-R17s~ekKHaAGSghzbmbo5ptdm4")
-WORKSPACE_ID = os.getenv("fa0c62ce-0bd4-420d-a281-cc39696ebd3f")
-REPORT_ID = os.getenv("5dcf93c4-4f60-43ef-a2ad-04ac9022c74a")
+TENANT_ID = os.getenv("TENANT_ID")         
+CLIENT_ID = os.getenv("CLIENT_ID")
+CLIENT_SECRET = os.getenv("CLIENT_SECRET")
+WORKSPACE_ID = os.getenv("WORKSPACE_ID")
+REPORT_ID = os.getenv("REPORT_ID")
 
 @app.route('/')
 def index():
