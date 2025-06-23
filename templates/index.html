@@ -13,25 +13,28 @@
     const reportId = "{{ report_id }}";
     const groupId = "{{ workspace_id }}";
     const embedUrl = `https://app.powerbi.com/reportEmbed?reportId=${reportId}&groupId=${groupId}`;
+fetch('/getEmbedToken')
+  .then(response => response.json())
+  .then(data => {
+    console.log("Token API Response:", data);  // 🔍 Add this
 
-    fetch('/getEmbedToken')
-      .then(response => response.json())
-      .then(data => {
-        const embedConfig = {
-          type: 'report',
-          id: reportId,
-          embedUrl: embedUrl,
-          accessToken: data.token,
-          tokenType: models.TokenType.Embed,
-          settings: {
-            panes: {
-              filters: { visible: false },
-              pageNavigation: { visible: true }
-            }
-          }
-        };
-        powerbi.embed(document.getElementById('reportContainer'), embedConfig);
-      });
+    const embedConfig = {
+      type: 'report',
+      id: reportId,
+      embedUrl: embedUrl,
+      accessToken: data.token,
+      tokenType: models.TokenType.Embed,
+      settings: {
+        panes: {
+          filters: { visible: false },
+          pageNavigation: { visible: true }
+        }
+      }
+    };
+
+    powerbi.embed(document.getElementById('reportContainer'), embedConfig);
+  });
+
   </script>
 </body>
 </html>
