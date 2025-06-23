@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: powerbi-embed
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    envVars:
+      - key: TENANT_ID
+        value: "97731762-4437-411a-9438-1def5eb9188a"
+      - key: CLIENT_ID
+        value: "957043b2-d8d0-4038-b8a0-1df194e591c5"
+      - key: CLIENT_SECRET
+        value: "BSU8Q~P4g8Vxb-R17s~ekKHaAGSghzbmbo5ptdm4"
+      - key: WORKSPACE_ID
+        value: "fa0c62ce-0bd4-420d-a281-cc39696ebd3f"
+      - key: REPORT_ID
+        value: "5dcf93c4-4f60-43ef-a2ad-04ac9022c74a"
